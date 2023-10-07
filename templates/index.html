@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
+</head>
+<body>
+    <div class="all">
+        <div class="container" id="cardContainer">
+            <!-- Cards will be dynamically generated here -->
+        </div>
+        <div class="pagination">
+        <!-- Next button to load the next set of cards -->
+        <a href="#" class="beautiful-button2" id="prevButton">Prev</a>
+        <a href="#" class="beautiful-button" id="nextButton">Next</a>
+        </div>
+    </div>
+
+    <div class="console" id="consoleContainer">
+
+    </div>
+
+
+
+    <script>
+        let jsonData = []; // Store the JSON data
+        let currentPage = 0; // Track the current page
+        const cardsPerPage = 8; // Number of cards per page
+
+        const cardContainer = document.getElementById('cardContainer');
+        const nextButton = document.getElementById('nextButton');
+        const prevButton = document.getElementById('prevButton');
+
+        function createCard(cardData) {
+            const card = document.createElement('div');
+            card.classList.add('card');
+
+            const image = document.createElement('img');
+            image.src = cardData.image; // Set the image source from the JSON data
+            image.alt = 'User Image'; // Set alt text for accessibility
+            image.style.height = `100px`
+            image.style.width = `100px`
+            image.style.paddingLeft = `10px`
+            image.style.paddingTop = `10px`
+            image.style.transition = `0.4s ease-out`
+            image.style.borderRadius = `20px`
+            card.appendChild(image);
+
+            const login_text = document.createElement('p');
+            login_text.textContent = `Login: `;
+            login_text.style.color = `white`
+            login_text.style.paddingLeft = `10px`
+            card.appendChild(login_text);
+
+            const login = document.createElement('p');
+            login.textContent = `${cardData.login}`;
+            login.style.color = `white`
+            login.style.paddingTop = `25px`
+            login.style.paddingLeft = `125px`
+            login.style.position = `absolute`
+            card.appendChild(login);
+
+            const level_text = document.createElement('p');
+            level_text.textContent = `Level : `;
+            level_text.style.color = `white`
+            level_text.style.paddingTop = `50px`
+            level_text.style.backgroundPositionX = `10px`
+            level_text.style.paddingLeft = `118px`
+            level_text.style.position = `absolute`
+            card.appendChild(level_text);
+
+            const level = document.createElement('p');
+            level.textContent = `${cardData.level}`;
+            level.style.color = `white`
+            level.style.paddingTop = `70px`
+            level.style.backgroundPositionX = `10px`
+            level.style.paddingLeft = `125px`
+            level.style.position = `absolute`
+            card.appendChild(level);
+
+            const blackhole = document.createElement('p');
+            blackhole.textContent = `Blackhole : ${cardData.blackhole} Day(s)`;
+            blackhole.style.color = `white`
+            blackhole.style.paddingTop = `110px`
+            blackhole.style.backgroundPositionX = `10px`
+            blackhole.style.paddingLeft = `10px`
+            blackhole.style.position = `absolute`
+            card.appendChild(blackhole);
+
+            const last_project_index = document.createElement('p');
+            last_project_index.textContent = `Last submitted project : `;
+            last_project_index.style.color = `white`
+            last_project_index.style.paddingTop = `140px`
+            last_project_index.style.backgroundPositionX = `10px`
+            last_project_index.style.paddingLeft = `10px`
+            last_project_index.style.position = `absolute`
+            card.appendChild(last_project_index);
+
+            const last_project = document.createElement('p');
+            last_project.textContent = `${cardData.project_name}`;
+            last_project.style.color = `white`
+            last_project.style.paddingTop = `160px`
+            last_project.style.backgroundPositionX = `10px`
+            last_project.style.paddingLeft = `10px`
+            last_project.style.position = `absolute`
+            card.appendChild(last_project);
+
+            const submission_text = document.createElement('p');
+            submission_text.textContent = `Submission date : `;
+            submission_text.style.color = `white`
+            submission_text.style.paddingTop = `190px`
+            submission_text.style.backgroundPositionX = `10px`
+            submission_text.style.paddingLeft = `10px`
+            submission_text.style.position = `absolute`
+            card.appendChild(submission_text);
+
+            const submission = document.createElement('p');
+            submission.textContent = `${cardData.marked_at}`;
+            submission.style.color = `white`
+            submission.style.paddingTop = `210px`
+            submission.style.backgroundPositionX = `10px`
+            submission.style.paddingLeft = `10px`
+            submission.style.position = `absolute`
+            card.appendChild(submission);
+
+            const intra = document.createElement('button');
+            intra.textContent = 'Go to Intra Profile'; // Button text
+            // Add a click event listener to navigate to Google when the button is clicked
+            intra.addEventListener('click', function() {
+                window.location.href = `${cardData.intra_link}`; // Redirect to Google
+            });
+            intra.style.backgroundColor = `papayawhip`
+            intra.style.borderRadius = `8px`
+            intra.style.padding = `5px 5px`
+            intra.style.border = `4px solid black`
+            intra.style.borderStyle = `ridge`
+            intra.style.textAlign = `center`
+            intra.style.cursor = `pointer`
+            intra.style.backgroundPositionX = `60px`
+            intra.style.marginLeft = `60px`
+            intra.style.position = `absolute`
+            intra.style.boxSizing = `absolute`
+            // intra.style.Height = `20px`
+            intra.style.bottom = `20px`
+            // Append the button to the 'card' element or any other parent element you have
+            card.appendChild(intra);
+
+            return card;
+        }
+
+        // Function to display cards for the current page
+        function displayCurrentPage() {
+            const startIndex = currentPage * cardsPerPage;
+            const endIndex = startIndex + cardsPerPage;
+
+            // Clear the card container
+            cardContainer.innerHTML = '';
+
+            // Display cards for the current page
+            for (let i = startIndex; i < Math.min(jsonData.length, endIndex); i++) {
+                const cardData = jsonData[i];
+                const card = createCard(cardData);
+                cardContainer.appendChild(card);
+            }
+        }
+
+        function handleNextClick() {
+            if (currentPage + 1 == Math.ceil(jsonData.length / cardsPerPage))
+                return;
+            currentPage++; // Move to the next page
+            displayCurrentPage(); // Display the next set of cards
+        }
+
+        function handleprevClick() {
+            if (currentPage == 0)
+                return;
+            currentPage--; // Move to the next page
+            displayCurrentPage(); // Display the next set of cards
+        }
+
+        // Fetch JSON data and set up the initial page
+        fetch('/data')
+            .then(response => response.json())
+            .then(data => {
+                jsonData = data; // Store the JSON data
+                // Display the initial page
+                displayCurrentPage();
+                // Add event listener to the "Next" button
+                // nextButton.disabled  = false;
+                // prevButton.disabled  = false;
+                prevButton.addEventListener('click', handleprevClick);
+                nextButton.addEventListener('click', handleNextClick);
+                // Add event listener to the "Next" button
+            })
+            .catch(error => console.error('Error loading JSON data:', error));
+
+    </script>
+</body>
+</html>
+      
+
+      
