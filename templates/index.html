@@ -19,6 +19,11 @@
     </div>
 
     <div class="console" id="consoleContainer">
+        <div id="image-contain"></div>
+        <div id="buttons">
+            <button onclick="callFunction()" class="beautiful-button3">Call Function</button>
+            <p id="result"></p>
+        </div>
 
     </div>
 
@@ -199,6 +204,27 @@
 
             return card;
         }
+
+        const imageContainer = document.getElementById("image-contain");
+
+        // Create an img element
+        const imageElement = document.createElement("img");
+
+        imageElement.src = '/image';
+        imageElement.style.maxHeight = `850px`;
+        imageElement.style.maxWidth = `850px`;
+        imageContainer.appendChild(imageElement);
+
+        function callFunction() {
+            // Send an AJAX request to the Flask route that triggers the function
+            fetch('/call_function')
+                .then(response => response.text())
+                .then(data => {
+                    // Display the result on the web page
+                    document.getElementById('result').textContent = data;
+                })
+                .catch(error => console.error('Error:', error));
+            }
 
         // Function to display cards for the current page
         function displayCurrentPage() {

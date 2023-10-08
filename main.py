@@ -84,10 +84,10 @@ def filter_cadets():
             try:
                 if len(response.json()['cursus_users']) > 1 and response.json()['cursus_users'][1]['grade'] in ["Member","Learner"]:
                     passed_users.append(response.json())
-                    print(f"{response.json()['login']} passed the piscine")
-                else:
-                    non_passed_users.append(response.json())
-                    print(f"{response.json()['login']} did not pass the piscine")
+                    # print(f"{response.json()['login']} passed the piscine")
+                # else:
+                #     non_passed_users.append(response.json())
+                #     print(f"{response.json()['login']} did not pass the piscine")
             except Exception as err:
                 print(f"Error occured: {err}")
         else:
