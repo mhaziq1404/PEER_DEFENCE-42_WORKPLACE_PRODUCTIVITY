@@ -8,6 +8,10 @@ from reportlab.lib.pagesizes import letter, landscape
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
+import matplotlib.pyplot as plt
+
+UID = "u-s4t2ud-bd8c3b57f05ac6f234a7fe621d4ce5640c69677562fd8522c527f0cd1684cab7"
+SECRET = "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"
 
 app = Flask(__name__)
 
@@ -18,18 +22,15 @@ def index():
 @app.route('/data')
 def get_data():
     # You can read the JSON data and return it as JSON
-    with open('blackhole.json', 'r') as json_file:
+    with open('json/blackhole.json', 'r') as json_file:
         data = json.load(json_file)
     return jsonify(data)
 
 @app.route('/image')
 def get_image():
     # Return the test.jpg image file
-    return send_file('test.jpg', mimetype='image/jpeg')
+    return send_file('bar_chart.png', mimetype='image/jpeg')
 
-
-UID = "u-s4t2ud-bd8c3b57f05ac6f234a7fe621d4ce5640c69677562fd8522c527f0cd1684cab7"
-SECRET = "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"
 
 # RESQUESTING ACCESS_TOKEN TO VALHALLA USING SECRETS
 headers = {'Content-type':'application/json'}
@@ -39,7 +40,7 @@ access_token = r.json()['access_token']
 def get_all_users():
 
     # print("\033[0;33mREQUESTING FOR ALL USERS\033[0m")
-    if (os.path.exists('cadets.json')):
+    if (os.path.exists('json/cadets.json')):
         # print('\033[0;33mFinished fetching\033[0m')
         return
 
@@ -53,7 +54,7 @@ def get_all_users():
         tol = len(response.json())
         i += 1
     # output results to "user_42kl.json"
-    with open("user_42kl.json","w") as f:
+    with open("json/user_42kl.json","w") as f:
         f.write(json.dumps(full_list))
     # print("\033[0;33mREQUEST COMPLETED\033[0m")
 
@@ -71,14 +72,14 @@ def get_keys_by_type(dictionaries, key):
 def filter_cadets():
     # print("\033[0;33mFILTERING CADETS FROM PISCINERS\033[0m")
     try:
-        with open("user_42kl.json", "r") as f:
+        with open("json/user_42kl.json", "r") as f:
             users_42kl = json.loads(f.read())
-        with open("cadets.json", "r") as f:
+        with open("json/cadets.json", "r") as f:
             passed_users = json.loads(f.read())
-        with open("dumpster.json", "r") as f:
+        with open("json/dumpster.json", "r") as f:
             non_passed_users = json.loads(f.read())
     except:
-        with open("user_42kl.json", "r") as f:
+        with open("json/user_42kl.json", "r") as f:
             users_42kl = json.loads(f.read())
             passed_users = []
             non_passed_users = []
@@ -96,9 +97,9 @@ def filter_cadets():
                 print(f"Error occured: {err}")
         else:
             print(user['login'], "discovered before")
-    with open("cadets.json", "w") as f:
+    with open("json/cadets.json", "w") as f:
         f.write(json.dumps(passed_users))
-    with open("dumpster.json", "w") as f:
+    with open("json/dumpster.json", "w") as f:
         f.write(json.dumps(non_passed_users))
     # print("\033[0;33mCADETS FILTERED\033[0m")
 
@@ -106,7 +107,7 @@ def generate_sheet() -> list:
     dangerous_students = []
 
     # print(f"\033[0;33mGENERATING EXCEL SHEET\033[0m")
-    with open("cadets.json", "r") as f:
+    with open("json/cadets.json", "r") as f:
         cadets = json.loads(f.read())
     current_datetime = datetime.utcnow()
     for cadet in cadets:
@@ -143,7 +144,7 @@ def export(bh_students: list):
 def my_function():
     try:
         # Read JSON data from the input JSON file
-        with open("blackhole.json", 'r') as json_file:
+        with open("json/blackhole.json", 'r') as json_file:
             data = json.load(json_file)
 
         # Write the formatted data to a text file
@@ -166,30 +167,24 @@ def my_function():
         pdf_file = "final_report.pdf"
         doc = SimpleDocTemplate(pdf_file, pagesize=letter)
 
-        # Define a list to hold the elements of the PDF (title, text, image, etc.)
         elements = []
 
-        # Define a custom style for the title
         title_style = ParagraphStyle(name='TitleStyle', fontSize=18, alignment=0)
 
-        image_path = "42.png"  # Replace with the path to your image
+        image_path = "imgs/42.png"  # Replace with the path to your image
         img = Image(image_path, width=5 * inch, height=1.1 * inch)
         elements.append(img)
         elements.append(Spacer(1, 1 * inch))
 
-        # Create a title
         title = Paragraph("Cadets BlackHole Days Report", title_style)
         elements.append(title)
 
-        # Add space after the title
         elements.append(Spacer(1, 0.8 * inch))
 
-        # Define the body text style
         body_style = getSampleStyleSheet()['Normal']
         custom_style = ParagraphStyle(name='CustomStyle', parent=body_style)
         custom_style.leftIndent = 20  # Adjust the indentation in points (1 inch = 72 points)
 
-        # Add paragraphs of text to the report
         text = ""
         for key, val in count_dict.items():
             text  += f"Cadet(s) on level {key} has {int(val)}(s) that are getting absorbed by the blackhole.\n"
@@ -199,26 +194,54 @@ def my_function():
             text = ""
             if key in name_dict:
                 for value in name_dict[key]:
-                    # Create paragraphs based on name_dict content
                     text = f"{value}"
                     paragraph = Paragraph(text, custom_style)
                     elements.append(paragraph)
                     text = ""
             elements.append(Spacer(1, 0.2 * inch))
 
-
-        # Build the PDF document
         doc.build(elements)
 
-        return "True"
+        return send_file(pdf_file, as_attachment=True)
     except Exception as e:
         print(f"An error occurred: {str(e)}")
         return "False"
     
 
+def make_graph(list: list):
+    dict = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
+    for item in list:
+        level = float(item['level'])
+        if level >= 8.00:
+            level = 8.00
+        level_as_int = int(level)  # Convert to int if needed
+        if level_as_int not in dict:
+            dict[level_as_int] = 0
+        dict[level_as_int] += 1
+    plt.bar(dict.keys(), dict.values())
+    plt.xlabel('Cadets level')
+    plt.ylabel('Head counts')
+    plt.xticks([0, 1, 2, 3, 4, 5, 6, 7, 8])
+    plt.title('Selected cadets level distribution')
+    plt.savefig('bar_chart.png') 
+    # return (dict)
+    
+@app.route('/call_function2')
+def export():
+    # Load JSON data from a file into a DataFrame
+    bh_students = pd.read_json("json/blackhole.json")
+
+    # Convert the DataFrame to a CSV file
+    bh_students.to_csv('blackhole.csv', index=True)
+
+    # Send the CSV file for download
+    return send_file('blackhole.csv', as_attachment=True)
+
+
 if __name__ == '__main__':
     get_all_users()
     res = generate_sheet()
-    with open("blackhole.json","w") as f:
+    make_graph(res)
+    with open("json/blackhole.json","w") as f:
         f.write(json.dumps(res))
     app.run(debug=True)
