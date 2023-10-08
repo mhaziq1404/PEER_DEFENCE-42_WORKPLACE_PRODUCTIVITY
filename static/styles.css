@@ -1,37 +1,49 @@
+body {
+  background-color: rgb(212, 207, 207);
+}
+
 .all {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
+  /* justify-content: space-between; */
+  /* align-items: flex-start; */
 }
 
 .container {
-  position: absolute;
-  height: 800px;
+  /* position: absolute;
+  height: 800px; */
+  /* top: 100px; */
+  /* padding: 10px; */
   width: 99%;
-  top: 100px;
-  display: flex;
-  align-items: flex-start;
+}
+
+#cardContainer {
+	padding: 20px 10px;
+	display: flex;
+	align-items: flex-start;
+	flex-direction: row;
 }
 
 .pagination {
-  top: 30px;
-  display: flex;
-  align-items: flex-start;
+	margin: 10px 0px;
+  /* top: 30px; */
+  /* display: flex;
+  align-items: flex-start; */
 }
 
 .card {
   display: flex;
-  height: 320px;
+  /* height: 320px; */
   width: 480px;
   padding: 10px;
-  background-color: #4900db;
+  background-color: #f8f9fa;
+  background-image: url('http://dotrex.co/theme-preview/cards/img/bg-card2.png');
   border-radius: 10px;
-  box-shadow: -1rem 0 3rem #000;
-/*   margin-left: -50px; */
+  box-shadow: 0 0.2rem 0.5rem #ced4da;
   transition: 0.4s ease-out;
   position: relative;
-  left: 0px;
+  left: 0px; /*smoother animation*/
 }
 
 .card:not(:first-child) {
@@ -113,13 +125,13 @@ svg {
   text-align: center;
   text-decoration: none;
   border-radius: 30px;
-  background-color: #3498db; /* Change this to your desired background color */
+  background-color: #34a0a4; /* Change this to your desired background color */
   color: #fff; /* Change this to your desired text color */
   border: 2px solid #2980b9; /* Change this to your desired border color */
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
   cursor: pointer;
-  position: absolute;
-  margin-left: calc(50% - 100px);
+  /* position: absolute;
+  margin-left: calc(50% - 100px); */
 }
 
 .beautiful-button:hover {
@@ -136,13 +148,13 @@ svg {
   text-align: center;
   text-decoration: none;
   border-radius: 30px;
-  background-color: #3498db; /* Change this to your desired background color */
+  background-color: #34a0a4; /* Change this to your desired background color */
   color: #fff; /* Change this to your desired text color */
   border: 2px solid #2980b9; /* Change this to your desired border color */
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
   cursor: pointer;
-  position: absolute;
-  margin-left: calc(50%);
+  /* position: absolute; */
+  /* margin-left: calc(50%); */
 }
 
 .beautiful-button2:hover {
@@ -150,3 +162,32 @@ svg {
   color: #fff; /* Change this to the hover text color */
   border: 2px solid #3498db; /* Change this to the hover border color */
 }
+
+.console{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.beautiful-button3 {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 30px;
+    background-color: #34a0a4; /* Change this to your desired background color */
+    color: #fff; /* Change this to your desired text color */
+    border: 2px solid #2980b9; /* Change this to your desired border color */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    cursor: pointer;
+    /* position: absolute;
+    margin-left: calc(50% - 100px); */
+  }
+  
+  .beautiful-butto3:hover {
+    background-color: #2980b9; /* Change this to the hover background color */
+    color: #fff; /* Change this to the hover text color */
+    border: 2px solid #3498db; /* Change this to the hover border color */
+  }
