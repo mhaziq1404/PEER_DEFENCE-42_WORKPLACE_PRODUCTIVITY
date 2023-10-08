@@ -11,8 +11,15 @@
 			<div id="cardContainer">
 				<!-- Cards will be dynamically generated here -->
 			</div>
+        <div class="container">
+			<div id="cardContainer">
+				<!-- Cards will be dynamically generated here -->
+			</div>
         </div>
         <div class="pagination">
+        	<!-- Next button to load the next set of cards -->
+			<a href="#" class="beautiful-button2" id="prevButton">Prev</a>
+			<a href="#" class="beautiful-button" id="nextButton">Next</a>
         	<!-- Next button to load the next set of cards -->
 			<a href="#" class="beautiful-button2" id="prevButton">Prev</a>
 			<a href="#" class="beautiful-button" id="nextButton">Next</a>
@@ -67,9 +74,35 @@
 			image.addEventListener('click', ()=>{
 				window.open(cardData.intra_link, '_blank');
 			});
+			image.alt = 'User Image'; // Set alt text for accessibility
+            image.style.height = '100px';
+            image.style.width = '100px';
+            image.style.transition = '0.4s ease-out'
+            image.style.borderRadius = '80px';
+			image.style.borderStyle = 'solid'
+			image.style.borderWidth = '.2px'
+			image.style.cursor = 'pointer'
+			image.addEventListener('click', ()=>{
+				window.open(cardData.intra_link, '_blank');
+			});
             card.appendChild(image);
 
             const login_text = document.createElement('p');
+            login_text.textContent = `${cardData.login}`;
+            login_text.style.color = '#34a0a4'
+			login_text.style.cursor = 'pointer'
+			login_text.style.fontWeight = '600'
+			login_text.style.fontSize = '25px'
+            // login_text.style.paddingLeft = '10px'
+			login_text.addEventListener('mouseover', ()=>{
+				login_text.style.textDecoration = 'underline';
+			});
+			login_text.addEventListener('mouseout', ()=>{
+				login_text.style.textDecoration = 'none';
+			});
+			login_text.addEventListener('click', ()=>{
+				window.open(cardData.intra_link, '_blank');
+			});
             login_text.textContent = `${cardData.login}`;
             login_text.style.color = '#34a0a4'
 			login_text.style.cursor = 'pointer'
