@@ -8,6 +8,7 @@ from reportlab.lib.pagesizes import letter, landscape
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
+import matplotlib.pyplot as plt
 
 UID = "u-s4t2ud-bd8c3b57f05ac6f234a7fe621d4ce5640c69677562fd8522c527f0cd1684cab7"
 SECRET = "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"
@@ -28,7 +29,7 @@ def get_data():
 @app.route('/image')
 def get_image():
     # Return the test.jpg image file
-    return send_file('test.jpg', mimetype='image/jpeg')
+    return send_file('bar_chart.png', mimetype='image/jpeg')
 
 
 # RESQUESTING ACCESS_TOKEN TO VALHALLA USING SECRETS
@@ -39,7 +40,7 @@ access_token = r.json()['access_token']
 def get_all_users():
 
     # print("\033[0;33mREQUESTING FOR ALL USERS\033[0m")
-    if (os.path.exists('cadets.json')):
+    if (os.path.exists('json/cadets.json')):
         # print('\033[0;33mFinished fetching\033[0m')
         return
 
@@ -210,18 +211,20 @@ def my_function():
 def make_graph(list: list):
     dict = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
     for item in list:
-        if (item['level'] >= 8):
-            item['level'] = 8
-        dict[int(item['level'])] += 1
-    # plt.bar(dict.keys(), dict.values())
-    # plt.xlabel('Cadets level')
-    # plt.ylabel('Head counts')
-    # plt.xticks([0, 1, 2, 3, 4, 5, 6, 7, 8])
-    # plt.title('Selected cadets level distribution')
-    # plt.savefig('bar_chart.png') 
-    # # Display the plot
-    # plt.close()
-    return (dict)
+        level = float(item['level'])
+        if level >= 8.00:
+            level = 8.00
+        level_as_int = int(level)  # Convert to int if needed
+        if level_as_int not in dict:
+            dict[level_as_int] = 0
+        dict[level_as_int] += 1
+    plt.bar(dict.keys(), dict.values())
+    plt.xlabel('Cadets level')
+    plt.ylabel('Head counts')
+    plt.xticks([0, 1, 2, 3, 4, 5, 6, 7, 8])
+    plt.title('Selected cadets level distribution')
+    plt.savefig('bar_chart.png') 
+    # return (dict)
     
 @app.route('/call_function2')
 def export():
@@ -238,6 +241,7 @@ def export():
 if __name__ == '__main__':
     get_all_users()
     res = generate_sheet()
+    make_graph(res)
     with open("json/blackhole.json","w") as f:
         f.write(json.dumps(res))
     app.run(debug=True)

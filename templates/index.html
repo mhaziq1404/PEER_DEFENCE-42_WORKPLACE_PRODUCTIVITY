@@ -6,6 +6,14 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
 </head>
 <body>
+    <div class="header">
+        <a href="#" class="logo">
+            <img src="https://www.disruptr.com.my/wp-content/uploads/2023/05/42-KL-BLACK-LOGO-1536x373.png" alt="Company Logo">
+        </a>
+        <div class="header-right">
+          <h2>42KL Blackhole Visualiser</h2>
+        </div>
+      </div>
     <div class="all">
         <div class="container">
 			<div id="cardContainer">
@@ -24,10 +32,9 @@
         <div id="infoContainer">
         </div>
         <div id="image-contain"></div>
-        <div id="buttons">
+        <div id="buttons" class="btn">
             <button onclick="callFunction()" class="beautiful-button3">Generate Report (.pdf)</button>
             <button onclick="callFunction2()" class="beautiful-button3">Generate Report (.csv)</button>
-            <p id="result"></p>
         </div>
 
     </div>
@@ -116,7 +123,7 @@
             card.appendChild(login_text);
 
 			const bhInfoLabel = document.createElement('p');
-			bhInfoLabel.textContent = 'Black Hole absoption in '
+			bhInfoLabel.textContent = 'Black Hole absorption in '
 			bhInfoLabel.style.color = 'black'
 			card.appendChild(bhInfoLabel);
 
