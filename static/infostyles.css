@@ -1,6 +1,6 @@
 #infoContainer {
-    width: 400px;
-    height: 400px;
+    min-width: 400px;
+    min-height: 400px;
     /* background-color: black; */
     margin: 0px 20px;
 	padding: 20px 20px;
