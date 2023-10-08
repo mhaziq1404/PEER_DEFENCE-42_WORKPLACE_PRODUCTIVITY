@@ -1,0 +1,100 @@
+,blackhole,fullname,login,intra_link,image,active,level,project_name,marked_at
+0,2,Jia Xian Chu,jchu,https://profile.intra.42.fr/users/jchu,https://cdn.intra.42.fr/users/a04bd2778d433089907db81fa45e79d6/jchu.jpg,True,1.94,Born2beroot,in progress
+1,4,Goh Hin Chik Daryl,gdaryl,https://profile.intra.42.fr/users/gdaryl,https://cdn.intra.42.fr/users/bf136cb19ce1d3241f4b044d3e9c431f/gdaryl.jpg,True,3.98,Python for Data Science,in progress
+2,4,Bek Hung Yi,bhung-yi,https://profile.intra.42.fr/users/bhung-yi,https://cdn.intra.42.fr/users/921caf619f35e745809bed870b432ab7/bhung-yi.jpg,True,3.72,Exam Rank 03,in progress
+3,5,Lee Tian Hau,ltian-ha,https://profile.intra.42.fr/users/ltian-ha,https://cdn.intra.42.fr/users/2657865dd078b65c9ae8182b6f7dbf7b/ltian-ha.jpg,True,3.3,Philosophers,in progress
+4,6,Joshua Thor,jthor,https://profile.intra.42.fr/users/jthor,https://cdn.intra.42.fr/users/7bb36419409f3e533c4cb3f553895b1b/jthor.jpg,True,4.71,Python - 2 - DataTable,2023-10-06
+5,8,Douglas Chuah,dchuah,https://profile.intra.42.fr/users/dchuah,https://cdn.intra.42.fr/users/d7e56afa970cef45cd37774e0a4c41ce/dchuah.jpg,True,1.05,Libft,2023-04-14
+6,8,Rudi Juandi Butarbutar,rbutarbu,https://profile.intra.42.fr/users/rbutarbu,https://cdn.intra.42.fr/users/1ccabfa82db9c84f2b450a54a8de2caa/rbutarbu.jpg,True,3.17,minishell,in progress
+7,13,Shrut Silakari,ssilakar,https://profile.intra.42.fr/users/ssilakar,https://cdn.intra.42.fr/users/4d535bb3cd906a75b42665f26af866b4/ssilakar.jpg,False,1.02,ft_printf,2023-06-27
+8,13,Louise Zapata,lzapata,https://profile.intra.42.fr/users/lzapata,https://cdn.intra.42.fr/users/2138b36d5be52cb2ea6ac7504e012332/lzapata.jpg,True,1.0,Born2beroot,in progress
+9,14,Adam Muaz Mazlan,amazlan,https://profile.intra.42.fr/users/amazlan,https://cdn.intra.42.fr/users/95f25ea483f79ff10a7dfa234afeadb9/amazlan.jpg,True,1.37,ft_printf,in progress
+10,14,Thow Jien Jin,tjien-ji,https://profile.intra.42.fr/users/tjien-ji,https://cdn.intra.42.fr/users/da0b0b9f902f2ad7775a9ede46dea233/tjien-ji.jpg,True,4.25,minishell,2023-08-27
+11,14,Colin Cheong,cocheong,https://profile.intra.42.fr/users/cocheong,https://cdn.intra.42.fr/users/03e940cc25ad281eb7f784fbd3d57dcc/cocheong.jpg,True,3.23,Exam Rank 03,in progress
+12,16,Kwan Jun Er,kjun-er,https://profile.intra.42.fr/users/kjun-er,https://cdn.intra.42.fr/users/3c7cca4e1adb18a0aaa9a550902caa93/kjun-er.jpg,True,0.0,Libft,in progress
+13,16,Wallace Ting,wting,https://profile.intra.42.fr/users/wting,https://cdn.intra.42.fr/users/b2d8a7d44f04bb6324ad56b4d7b93d7f/wting.jpg,True,4.76,ft_irc,in progress
+14,17,Eason Seah,eseah,https://profile.intra.42.fr/users/eseah,https://cdn.intra.42.fr/users/6f09dd93748eb165c569808eecbff5f1/eseah.jpg,False,1.86,get_next_line,2023-03-21
+15,19,Low Weng Hong,lweng-ho,https://profile.intra.42.fr/users/lweng-ho,https://cdn.intra.42.fr/users/3058dde739f6f40003ecbb4d32cc1629/lweng-ho.jpg,True,1.44,ft_printf,2023-09-22
+16,19,Adam Harith Sharikh,asharikh,https://profile.intra.42.fr/users/asharikh,https://cdn.intra.42.fr/users/930de43d56d6f0c598363dc58b319ebe/asharikh.jpg,True,1.47,Born2beroot,in progress
+17,19,Mu Yin Hao,myin-hao,https://profile.intra.42.fr/users/myin-hao,https://cdn.intra.42.fr/users/13a80b3fa529d09fff39dd5c14ef78ed/myin-hao.jpeg,True,1.44,ft_printf,2023-09-21
+18,19,Ng Wai Keat,nwai-kea,https://profile.intra.42.fr/users/nwai-kea,https://cdn.intra.42.fr/users/43170b7afbce61691862266aa5c3745b/nwai-kea.jpg,True,4.39,NetPractice,2023-09-07
+19,19,Ong Jing Hanz,ojing-ha,https://profile.intra.42.fr/users/ojing-ha,https://cdn.intra.42.fr/users/381abf57c4ea27c22433590477f057d0/ojing-ha.jpg,True,5.08,CPP Module 05,in progress
+20,20,Jia Jie Chew,jichew,https://profile.intra.42.fr/users/jichew,https://cdn.intra.42.fr/users/2458700c6e0cf1154da4f2a2cc853227/jichew.jpeg,True,1.46,get_next_line,2023-09-19
+21,21,Yong Bin Wong,yowong,https://profile.intra.42.fr/users/yowong,https://cdn.intra.42.fr/users/9c4af6044e3de587280af09ca8a1f56b/yowong.jpg,True,1.0,Born2beroot,in progress
+22,21,Cheng Zhen Lee,chenglee,https://profile.intra.42.fr/users/chenglee,https://cdn.intra.42.fr/users/2bb6f2ad08f95cc3f808b19da87888e4/chenglee.jpg,True,1.44,ft_printf,2023-06-03
+23,22,Joshua Ngerng,jngerng,https://profile.intra.42.fr/users/jngerng,https://cdn.intra.42.fr/users/ebec824fc96c9ff62bc4a420bee779b9/jngerng.jpg,False,3.2,push_swap,2023-07-28
+24,22,Jun Hao Ivan Teoh,jteoh,https://profile.intra.42.fr/users/jteoh,https://cdn.intra.42.fr/users/5675c1840445efaab958c78ab9019abe/jteoh.jpg,True,4.57,NetPractice,2023-09-28
+25,23,Chia Yu Xiang,cyu-xian,https://profile.intra.42.fr/users/cyu-xian,https://cdn.intra.42.fr/users/b8d7ba1fd7fa8bcac6aa23ee49b89bcc/cyu-xian.jpg,True,4.28,minishell,2023-10-03
+26,25,Zhee Khang Lim,zhlim,https://profile.intra.42.fr/users/zhlim,https://cdn.intra.42.fr/users/fbb316234987c0758148bd70a557d860/zhlim.jpg,True,4.04,CPP Module 04,in progress
+27,26,Azuar Azuddin,aazuddin,https://profile.intra.42.fr/users/aazuddin,https://cdn.intra.42.fr/users/f1a248db759d8ea3ecc25049a1f1acbe/aazuddin.jpeg,False,0.0,Libft,in progress
+28,26,Hershel Tan,hetan,https://profile.intra.42.fr/users/hetan,https://cdn.intra.42.fr/users/2849e0c34c326708e1f33ed7d297b0d4/hetan.jpg,True,1.55,get_next_line,2023-10-06
+29,27,Yang Lee,yalee,https://profile.intra.42.fr/users/yalee,https://cdn.intra.42.fr/users/8d6f2bdb5e1667903b7721094bf2c6d4/yalee.jpg,True,4.31,Python for Data Science,in progress
+30,28,Chee Seng Sam,csam,https://profile.intra.42.fr/users/csam,https://cdn.intra.42.fr/users/d98caed357fa8262392e8fc5997bf6b6/csam.jpg,False,2.15,get_next_line,2023-05-04
+31,33,Mark Liew,mliew,https://profile.intra.42.fr/users/mliew,https://cdn.intra.42.fr/users/68c56509332c8f1cfaac160b4c89837b/mliew.jpg,True,5.15,cub3d,2023-09-30
+32,35,Sue Vyen Loke,sloke,https://profile.intra.42.fr/users/sloke,https://cdn.intra.42.fr/users/d3bdf163b40ce339eb158250ef34997a/sloke.jpg,True,1.7,Born2beroot,2023-07-06
+33,36,Yong Yuen Wong,ywong,https://profile.intra.42.fr/users/ywong,https://cdn.intra.42.fr/users/4b6ddd6b6255cc66a073694673ca4ae1/ywong.jpg,False,2.18,push_swap,in progress
+34,38,Muhammad Fikrie Khairul Muhsein,mukhairu,https://profile.intra.42.fr/users/mukhairu,https://cdn.intra.42.fr/users/ddcadddc14ca52ec2e134eb9fb73b504/mukhairu.jpg,False,3.84,Exam Rank 02,2023-09-08
+35,39,Nicholas Choo,nchoo,https://profile.intra.42.fr/users/nchoo,https://cdn.intra.42.fr/users/55c12684b160da4cabc0490156985ae4/nchoo.jpg,True,3.69,minishell,2023-04-04
+36,40,Lin San Pang,lpang,https://profile.intra.42.fr/users/lpang,https://cdn.intra.42.fr/users/5d500b00482389488052ea7b4e58c9b5/lpang.jpg,True,5.31,Inception,in progress
+37,44,Alvin Yap,alyap,https://profile.intra.42.fr/users/alyap,https://cdn.intra.42.fr/users/f100574ee80af0ea3f81e9fef5fce66a/alyap.jpeg,True,4.22,Python for Data Science,in progress
+38,45,Kristina Kuah,kkuah,https://profile.intra.42.fr/users/kkuah,https://cdn.intra.42.fr/users/7e51ef211670f1c23954a0f8cf60ad1c/kkuah.jpg,True,1.89,get_next_line,in progress
+39,46,Jodene Hii,johii,https://profile.intra.42.fr/users/johii,https://cdn.intra.42.fr/users/1d6cf9ab34cc94904c3765c7477ddc35/johii.jpg,True,1.89,get_next_line,2023-09-08
+40,47,Ethan Lim,etlim,https://profile.intra.42.fr/users/etlim,https://cdn.intra.42.fr/users/4581f86aef5eb3bb24d2e20104bdb63e/etlim.jpg,True,4.2,Python for Data Science,in progress
+41,48,Jin Chun Tan,jintan,https://profile.intra.42.fr/users/jintan,https://cdn.intra.42.fr/users/937dc4bd5f62494213822a4af2612e20/jintan.jpg,False,1.94,Born2beroot,2023-07-31
+42,48,Thong Zi Qi,tzi-qi,https://profile.intra.42.fr/users/tzi-qi,https://cdn.intra.42.fr/users/588484519f46859d9e40abea7f92e838/tzi-qi.jpg,False,4.11,minishell,2023-08-04
+43,49,Pei Yen Hiew,phiew,https://profile.intra.42.fr/users/phiew,https://cdn.intra.42.fr/users/df3a1f0889df3a6006c28205a8f4dba8/phiew.jpg,True,1.81,Python for Data Science,in progress
+44,50,Yohen Sheraun,ysheraun,https://profile.intra.42.fr/users/ysheraun,https://cdn.intra.42.fr/users/71c84aa200baa50dd44e56ccd6e06203/ysheraun.jpg,True,0.0,Libft,in progress
+45,54,Antoine Malignon,amaligno,https://profile.intra.42.fr/users/amaligno,https://cdn.intra.42.fr/users/9d310de195a05e6a87f2b0591fd56899/amaligno.jpg,True,4.28,Python for Data Science,in progress
+46,54,Khye Yee Yong,kyong,https://profile.intra.42.fr/users/kyong,https://cdn.intra.42.fr/users/6ee36266b506075b8e6c32c9d6e29e66/kyong.jpg,False,1.44,ft_printf,2023-04-22
+47,54,Guang Yu Lee,gualee,https://profile.intra.42.fr/users/gualee,https://cdn.intra.42.fr/users/f9b8f584d43d557336c9e962a4d2bb11/gualee.jpg,True,4.86,CPP Module 09,in progress
+48,56,Sara Yarham,syarham,https://profile.intra.42.fr/users/syarham,https://cdn.intra.42.fr/users/f9f55cb4050bf7a4c5e568a339d8a990/syarham.jpg,True,1.4,Python for Data Science,in progress
+49,58,Chee Zheng Chuan,czheng-c,https://profile.intra.42.fr/users/czheng-c,https://cdn.intra.42.fr/users/568e281ec7a59a1207d6db838dbf97eb/czheng-c.jpg,True,2.12,push_swap,in progress
+50,58,Yik Wai Chan,yichan,https://profile.intra.42.fr/users/yichan,https://cdn.intra.42.fr/users/a84862e164d5bd11771f074845d65b3c/yichan.jpg,True,5.21,Python for Data Science,in progress
+51,61,Khoo Kah Weng,kkah-wen,https://profile.intra.42.fr/users/kkah-wen,https://cdn.intra.42.fr/users/931c2f460e7d680ac930dc3e6cb86a3e/kkah-wen.jpg,True,4.51,CPP Module 04,2023-09-18
+52,62,Jc Liaw,jliaw,https://profile.intra.42.fr/users/jliaw,https://cdn.intra.42.fr/users/9668a86eba60dd21de441acb249fe6ee/jliaw.jpg,True,2.18,Python for Data Science,in progress
+53,62,Deepanraj Ravi Chandran,dravi-ch,https://profile.intra.42.fr/users/dravi-ch,https://cdn.intra.42.fr/users/abaf2d57847429d314bd0b5249e575ac/dravi-ch.jpeg,True,2.17,Internship I,in progress
+54,62,Chia Ping Xuan,cping-xu,https://profile.intra.42.fr/users/cping-xu,https://cdn.intra.42.fr/users/58282bba64db7c861ebf2ba1dea39eb4/cping-xu.jpg,True,4.76,cub3d,2023-09-04
+55,64,Daniel Tiong,dtiong,https://profile.intra.42.fr/users/dtiong,https://cdn.intra.42.fr/users/14fcbe454acc207e5fd9d030df287327/dtiong.jpg,False,0.0,Libft,in progress
+56,65,Chang Wei Sheng,cwei-she,https://profile.intra.42.fr/users/cwei-she,https://cdn.intra.42.fr/users/90b499c094c3c4fa8989850449c0e87d/cwei-she.jpeg,True,2.28,cub3d,in progress
+57,67,Ethan Law,etlaw,https://profile.intra.42.fr/users/etlaw,https://cdn.intra.42.fr/users/10022bfa7048946f4d1b59359cd2542a/etlaw.jpg,False,4.35,NetPractice,2023-09-10
+58,67,Ngan Tan Wang,ntan-wan,https://profile.intra.42.fr/users/ntan-wan,https://cdn.intra.42.fr/users/de6de02cb0102329abb451a3350d2429/ntan-wan.jpg,True,4.39,NetPractice,2023-03-24
+59,70,Ko En Cheong,kcheong,https://profile.intra.42.fr/users/kcheong,https://cdn.intra.42.fr/users/bda5ebb00bdf4a35e1f6bb271746a0ce/kcheong.jpg,True,4.49,cub3d,2023-09-30
+60,72,Andi Tok,atok,https://profile.intra.42.fr/users/atok,https://cdn.intra.42.fr/users/c584412f3ed393de11ff820adec899b0/atok.jpg,True,4.84,Python for Data Science,in progress
+61,73,Wei Jie Yap,wyap,https://profile.intra.42.fr/users/wyap,https://cdn.intra.42.fr/users/c6882fa8bff2fb695482aff40433baad/wyap.jpg,True,4.86,Python for Data Science,in progress
+62,74,Saleem Mohammed,salmoham,https://profile.intra.42.fr/users/salmoham,https://cdn.intra.42.fr/users/2e1dc5d6a3ba3a25ac0a0e9b748359f9/salmoham.jpg,True,2.29,Python for Data Science,in progress
+63,75,Jiayinn Chang,jiachang,https://profile.intra.42.fr/users/jiachang,https://cdn.intra.42.fr/users/62681523a79dd65e13f8fe96381e8ca3/jiachang.jpg,True,2.15,Python for Data Science,in progress
+64,76,Chiau Cheng Chuin,ccheng-c,https://profile.intra.42.fr/users/ccheng-c,https://cdn.intra.42.fr/users/251518509275e9301541751c8735c88e/ccheng-c.jpg,True,2.18,minitalk,in progress
+65,76,Aerilyn Heng,aheng,https://profile.intra.42.fr/users/aheng,https://cdn.intra.42.fr/users/91912ff98fffcae7e89d1f67ac6edae8/aheng.jpg,False,1.39,Python for Data Science,in progress
+66,76,Li Ren Chew,lchew,https://profile.intra.42.fr/users/lchew,https://cdn.intra.42.fr/users/595f145d8cb5fc5bf178a4d99b288c06/lchew.jpg,False,4.34,minishell,2023-08-04
+67,77,Kean Foo She,kshe,https://profile.intra.42.fr/users/kshe,https://cdn.intra.42.fr/users/391f2ba91e12954bc04aa3154d449296/kshe.jpg,True,2.96,Exam Rank 02,2023-09-04
+68,77,Justyn Tong,jutong,https://profile.intra.42.fr/users/jutong,https://cdn.intra.42.fr/users/f61df6f29ab29eda1d3930737e5f61ea/jutong.jpg,False,3.83,Philosophers,2023-09-02
+69,78,Jean Hui Low,jlow,https://profile.intra.42.fr/users/jlow,https://cdn.intra.42.fr/users/9317cc7a4d8bb84654b8e009ff54eb49/jlow.jpg,True,2.18,minitalk,in progress
+70,80,Wei Jun Lim,welim,https://profile.intra.42.fr/users/welim,https://cdn.intra.42.fr/users/54eb6722612f22106463c3832eca4da9/welim.jpg,True,4.93,cub3d,in progress
+71,82,Muhamad Haziq Muhamad Abdul Hay,mmuhamad,https://profile.intra.42.fr/users/mmuhamad,https://cdn.intra.42.fr/users/9c95d3418f100d61625f0833030adc99/mmuhamad.jpg,True,4.88,Python for Data Science,in progress
+72,82,Tay Hong Bing,thong-bi,https://profile.intra.42.fr/users/thong-bi,,False,3.07,so_long,2023-06-27
+73,82,Zheng Xiang Wong,zwong,https://profile.intra.42.fr/users/zwong,https://cdn.intra.42.fr/users/2de78bb0a111f6d7f1b90247f0d1a95d/zwong.jpg,True,5.15,CPP Module 07,2023-10-06
+74,85,Ryan Teoh,rteoh,https://profile.intra.42.fr/users/rteoh,https://cdn.intra.42.fr/users/e411ba8c9c005bf30f249d04c8f41ec1/rteoh.jpg,True,0.0,Python - 3 - OOP,2023-09-21
+75,85,Yong Kang Chai,ychai,https://profile.intra.42.fr/users/ychai,https://cdn.intra.42.fr/users/72a927b7d87195d36898b26f8ee2fb33/ychai.jpg,False,0.0,C Piscine Shell 01,2023-08-08
+76,85,Tan Jun Yu,tjun-yu,https://profile.intra.42.fr/users/tjun-yu,https://cdn.intra.42.fr/users/5a92566b9e5ed48cd73cefd01aa3dec4/tjun-yu.jpg,True,0.0,Python - 4 - Dod,2023-09-21
+77,85,Kian Feng Loh,kiloh,https://profile.intra.42.fr/users/kiloh,https://cdn.intra.42.fr/users/7afb0b2d3d2964c0bc4d101cf3bd072a/kiloh.jpg,True,0.0,Python for Data Science,in progress
+78,85,Abdul Hamid Bin Zubardi,abin-zub,https://profile.intra.42.fr/users/abin-zub,https://cdn.intra.42.fr/users/f08ac462ae72322ffc41ec24bc5c9750/abin-zub.jpg,True,0.0,Python - 3 - OOP,2023-09-21
+79,85,Lee Hin Yip,lyip,https://profile.intra.42.fr/users/lyip,https://cdn.intra.42.fr/users/a21c7f2f008d61df2145a8405b1811c4/lyip.jpg,True,0.0,Python for Data Science,in progress
+80,85,Jeshua Graceson,jgraceso,https://profile.intra.42.fr/users/jgraceso,https://cdn.intra.42.fr/users/856ebad2ad92bf63829591cefb7b918d/jgraceso.jpg,True,0.0,Python - 2 - DataTable,2023-09-21
+81,85,Yang Tang,yantang,https://profile.intra.42.fr/users/yantang,https://cdn.intra.42.fr/users/6bd4ee36c6e81310e3c55dbfba88f914/yantang.jpg,False,0.0,C Piscine Final Exam,2023-08-25
+82,85,Jya Xuen Lee,jyalee,https://profile.intra.42.fr/users/jyalee,https://cdn.intra.42.fr/users/7aadbfa905d1659d70a5afba7764007b/jyalee.jpg,True,0.0,Python - 0 - Starting,2023-09-26
+83,85,Zhen Toong Siew,zhsiew,https://profile.intra.42.fr/users/zhsiew,https://cdn.intra.42.fr/users/ab44052ccd04a7de5b73a7d08c3074df/zhsiew.jpg,False,0.0,C Piscine C 10,2023-08-25
+84,85,Wan Muhammad Nabil Bin Wan Ismail,wbin-wan,https://profile.intra.42.fr/users/wbin-wan,https://cdn.intra.42.fr/users/dc9fe16241e407bd2247f3ec6d932f19/wbin-wan.jpg,True,0.0,Python for Data Science,in progress
+85,85,Tio Kok Keat,tkok-kea,https://profile.intra.42.fr/users/tkok-kea,https://cdn.intra.42.fr/users/f468a70ea8388dc6cae47d54c9a7eb76/tkok-kea.jpg,True,0.0,Python for Data Science,in progress
+86,85,Marcus J Woo,mawoo,https://profile.intra.42.fr/users/mawoo,https://cdn.intra.42.fr/users/45ff3b40e3e196be89a79f4262cc2fbf/mawoo.jpg,False,0.0,C Piscine C 11,2023-08-25
+87,85,Wen Juin Low,welow,https://profile.intra.42.fr/users/welow,https://cdn.intra.42.fr/users/7bd2a6ffa329ca5c909f71621e91d6ae/welow.jpg,True,0.0,Python for Data Science,in progress
+88,85,Imran Azmi,iazmi,https://profile.intra.42.fr/users/iazmi,https://cdn.intra.42.fr/users/9a925a8fbb9def0381be0763bb3e449f/iazmi.jpg,True,0.0,Python for Data Science,in progress
+89,85,Fadzril Izad,fizad,https://profile.intra.42.fr/users/fizad,https://cdn.intra.42.fr/users/ac38984555e86252bb4b7465825e56e8/fizad.jpg,True,0.0,Python - 3 - OOP,2023-09-21
+90,85,Yik How Chong,yichong,https://profile.intra.42.fr/users/yichong,https://cdn.intra.42.fr/users/4093e1b384137838a86a2b0b26698104/yichong.jpg,True,0.0,Python for Data Science,in progress
+91,85,Cheng Yee Lai,chlai,https://profile.intra.42.fr/users/chlai,https://cdn.intra.42.fr/users/b6992f9cf6db6e98e572359481442f30/chlai.jpg,True,0.0,Python for Data Science,in progress
+92,85,Lim Chee Tian,lchee-ti,https://profile.intra.42.fr/users/lchee-ti,https://cdn.intra.42.fr/users/fe9f65935808b0a0a4ef5e02a362d46a/lchee-ti.jpg,False,0.0,C Piscine Final Exam,2023-08-25
+93,85,Afizzi Ali,afiali,https://profile.intra.42.fr/users/afiali,https://cdn.intra.42.fr/users/b9085f9745cd887085d77555a0abe9a0/afiali.jpg,True,0.0,Python for Data Science,in progress
+94,85,Kimberly Chan,kichan,https://profile.intra.42.fr/users/kichan,https://cdn.intra.42.fr/users/fbd1c84d1788e4cfced3cfd88bfa1a20/kichan.jpg,False,0.0,C Piscine Exam 01,2023-04-14
+95,85,How Yee Yap,howyap,https://profile.intra.42.fr/users/howyap,https://cdn.intra.42.fr/users/22b274952961db0add7f209fa8318ae3/howyap.jpg,False,0.0,C Piscine Shell 01,2023-03-03
+96,86,Michael Cheng,micheng,https://profile.intra.42.fr/users/micheng,https://cdn.intra.42.fr/users/638d4aa4e3208a5d6ec4ecf990967b01/micheng.jpeg,False,2.61,so_long,2023-08-28
+97,88,Lee William,lwilliam,https://profile.intra.42.fr/users/lwilliam,https://cdn.intra.42.fr/users/925eeaec43f74f666123cc5b82e695aa/lwilliam.jpg,True,6.25,cub3d,2023-08-14
+98,90,Ren Chee Choy,rchoy,https://profile.intra.42.fr/users/rchoy,https://cdn.intra.42.fr/users/993fdaf196683eaf37d436e7a546f84e/rchoy.jpg,True,5.03,Python for Data Science,in progress

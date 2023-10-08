@@ -2,6 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='infostyles.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
 </head>
 <body>
@@ -15,13 +16,17 @@
         	<!-- Next button to load the next set of cards -->
 			<a href="#" class="beautiful-button2" id="prevButton">Prev</a>
 			<a href="#" class="beautiful-button" id="nextButton">Next</a>
+        	<!-- Next button to load the next set of cards -->
         </div>
     </div>
 
     <div class="console" id="consoleContainer">
+        <div id="infoContainer">
+        </div>
         <div id="image-contain"></div>
         <div id="buttons">
-            <button onclick="callFunction()" class="beautiful-button3">Generate Report</button>
+            <button onclick="callFunction()" class="beautiful-button3">Generate Report (.pdf)</button>
+            <button onclick="callFunction2()" class="beautiful-button3">Generate Report (.csv)</button>
             <p id="result"></p>
         </div>
 
@@ -35,6 +40,7 @@
         const cardsPerPage = 8; // Number of cards per page
 
         const cardContainer = document.getElementById('cardContainer');
+        const infoContainer = document.getElementById('infoContainer');
         const nextButton = document.getElementById('nextButton');
         const prevButton = document.getElementById('prevButton');
 
@@ -45,6 +51,10 @@
 			card.style.flexDirection = 'column'
 			card.style.alignItems = 'center';
             card.classList.add('card');
+            card.addEventListener('mouseover', ()=>{
+				const card2 = createInfoCard(cardData);
+                infoContainer.innerHTML = card2.outerHTML;
+			});
 
             const image = document.createElement('img');
             image.src = cardData.image; // Set the image source from the JSON data
@@ -59,9 +69,35 @@
 			image.addEventListener('click', ()=>{
 				window.open(cardData.intra_link, '_blank');
 			});
+			image.alt = 'User Image'; // Set alt text for accessibility
+            image.style.height = '100px';
+            image.style.width = '100px';
+            image.style.transition = '0.4s ease-out'
+            image.style.borderRadius = '80px';
+			image.style.borderStyle = 'solid'
+			image.style.borderWidth = '.2px'
+			image.style.cursor = 'pointer'
+			image.addEventListener('click', ()=>{
+				window.open(cardData.intra_link, '_blank');
+			});
             card.appendChild(image);
 
             const login_text = document.createElement('p');
+            login_text.textContent = `${cardData.login}`;
+            login_text.style.color = '#34a0a4'
+			login_text.style.cursor = 'pointer'
+			login_text.style.fontWeight = '600'
+			login_text.style.fontSize = '25px'
+            // login_text.style.paddingLeft = '10px'
+			login_text.addEventListener('mouseover', ()=>{
+				login_text.style.textDecoration = 'underline';
+			});
+			login_text.addEventListener('mouseout', ()=>{
+				login_text.style.textDecoration = 'none';
+			});
+			login_text.addEventListener('click', ()=>{
+				window.open(cardData.intra_link, '_blank');
+			});
             login_text.textContent = `${cardData.login}`;
             login_text.style.color = '#34a0a4'
 			login_text.style.cursor = 'pointer'
@@ -109,99 +145,6 @@
 			bhValueDiv.appendChild(bhEndingLabel);
 			card.appendChild(bhValueDiv);
 			
-            // const login = document.createElement('p');
-            // login.textContent = 
-            // login.style.color = 'white'
-            // login.style.paddingTop = '25px'
-            // login.style.paddingLeft = '125px'
-            // login.style.position = 'absolute'
-            // card.appendChild(login);
-
-            // const level_text = document.createElement('p');
-            // level_text.textContent = 'Level : ';
-            // level_text.style.color = 'white'
-            // level_text.style.paddingTop = '50px'
-            // level_text.style.backgroundPositionX = '10px'
-            // level_text.style.paddingLeft = '118px'
-            // level_text.style.position = 'absolute'
-            // card.appendChild(level_text);
-
-            // const level = document.createElement('p');
-            // level.textContent = '${cardData.level}';
-            // level.style.color = 'white'
-            // level.style.paddingTop = '70px'
-            // level.style.backgroundPositionX = '10px'
-            // level.style.paddingLeft = '125px'
-            // level.style.position = 'absolute'
-            // card.appendChild(level);
-
-            // const blackhole = document.createElement('p');
-            // blackhole.textContent = 'Blackhole : ${cardData.blackhole} Day(s)';
-            // blackhole.style.color = 'white'
-            // blackhole.style.paddingTop = '110px'
-            // blackhole.style.backgroundPositionX = '10px'
-            // blackhole.style.paddingLeft = '10px'
-            // blackhole.style.position = 'absolute'
-            // card.appendChild(blackhole);
-
-            // const last_project_index = document.createElement('p');
-            // last_project_index.textContent = 'Last submitted project : ';
-            // last_project_index.style.color = 'white'
-            // last_project_index.style.paddingTop = '140px'
-            // last_project_index.style.backgroundPositionX = '10px'
-            // last_project_index.style.paddingLeft = '10px'
-            // last_project_index.style.position = 'absolute'
-            // card.appendChild(last_project_index);
-
-            // const last_project = document.createElement('p');
-            // last_project.textContent = '${cardData.project_name}';
-            // last_project.style.color = 'white'
-            // last_project.style.paddingTop = '160px'
-            // last_project.style.backgroundPositionX = '10px'
-            // last_project.style.paddingLeft = '10px'
-            // last_project.style.position = 'absolute'
-            // card.appendChild(last_project);
-
-            // const submission_text = document.createElement('p');
-            // submission_text.textContent = 'Submission date : ';
-            // submission_text.style.color = 'white'
-            // submission_text.style.paddingTop = '190px'
-            // submission_text.style.backgroundPositionX = '10px'
-            // submission_text.style.paddingLeft = '10px'
-            // submission_text.style.position = 'absolute'
-            // card.appendChild(submission_text);
-
-            // const submission = document.createElement('p');
-            // submission.textContent = '${cardData.marked_at}';
-            // submission.style.color = 'white'
-            // submission.style.paddingTop = '210px'
-            // submission.style.backgroundPositionX = '10px'
-            // submission.style.paddingLeft = '10px'
-            // submission.style.position = 'absolute'
-            // card.appendChild(submission);
-
-            // const intra = document.createElement('button');
-            // intra.textContent = 'Go to Intra Profile'; // Button text
-            // // Add a click event listener to navigate to Google when the button is clicked
-            // intra.addEventListener('click', function() {
-            //     window.location.href = '${cardData.intra_link}'; // Redirect to Google
-            // });
-            // intra.style.backgroundColor = 'papayawhip'
-            // intra.style.borderRadius = '8px'
-            // intra.style.padding = '5px 5px'
-            // intra.style.border = '4px solid black'
-            // intra.style.borderStyle = 'ridge'
-            // intra.style.textAlign = 'center'
-            // intra.style.cursor = 'pointer'
-            // intra.style.backgroundPositionX = '60px'
-            // intra.style.marginLeft = '60px'
-            // intra.style.position = 'absolute'
-            // intra.style.boxSizing = 'absolute'
-            // // intra.style.Height = '20px'
-            // intra.style.bottom = '20px'
-            // // Append the button to the 'card' element or any other parent element you have
-            // card.appendChild(intra);
-
             return card;
         }
 
@@ -218,13 +161,45 @@
         function callFunction() {
             // Send an AJAX request to the Flask route that triggers the function
             fetch('/call_function')
-                .then(response => response.text())
-                .then(data => {
-                    // Display the result on the web page
-                    document.getElementById('result').textContent = data;
+                .then(response => response.blob())
+                .then(blob => {
+                    // Create a download link for the file
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.style.display = 'none';
+                    a.href = url;
+                    a.download = 'CadetBlackholeDays.pdf';  // Specify the desired file name
+                    document.body.appendChild(a);
+
+                    // Trigger the download
+                    a.click();
+
+                    // Clean up the temporary URL
+                    window.URL.revokeObjectURL(url);
                 })
                 .catch(error => console.error('Error:', error));
-            }
+            } 
+        function callFunction2() {
+            // Send an AJAX request to the Flask route that triggers the function
+            fetch('/call_function2')
+                .then(response => response.blob())
+                .then(blob => {
+                    // Create a download link for the file
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.style.display = 'none';
+                    a.href = url;
+                    a.download = 'CadetBlackholeDays.csv';  // Specify the desired file name
+                    document.body.appendChild(a);
+
+                    // Trigger the download
+                    a.click();
+
+                    // Clean up the temporary URL
+                    window.URL.revokeObjectURL(url);
+                })
+                .catch(error => console.error('Error:', error));
+            } 
 
         // Function to display cards for the current page
         function displayCurrentPage() {
@@ -240,6 +215,65 @@
                 const card = createCard(cardData);
                 cardContainer.appendChild(card);
             }
+
+            infoContainer.innerHTML = '';
+            const cardData2 = jsonData[startIndex];
+            const card2 = createInfoCard(cardData2);
+            infoContainer.appendChild(card2);
+        }
+
+        function createInfoCard(cardData) {
+            const card = document.createElement('div');
+			card.style.padding = '20px';
+			card.style.display = 'flex';
+			card.style.flexDirection = 'column';
+			card.style.alignItems = 'flex-start';
+            
+            const title = document.createElement('h1');
+            title.textContent = `Basic Info`;
+            title.style.textDecorationLine = 'underline';
+            title.style.color = `black`;
+            title.style.padding = '0px 20px 0px 0px';
+			title.style.margin = '0';
+            card.appendChild(title);
+            
+            const name = document.createElement('p');
+            name.textContent = `Full Name: ${cardData.fullname}`;
+            name.style.color = `black`;
+            name.style.paddingTop = '30px';
+            name.style.paddingBottom = '10px';
+			name.style.margin = '0';
+            card.appendChild(name);
+
+            const login = document.createElement('p');
+            login.textContent = `Intra ID: ${cardData.login}`;
+            login.style.color = `black`;
+            login.style.padding = '20px 0px';
+			login.style.margin = '0';
+            card.appendChild(login);
+
+            const level = document.createElement('p');
+            level.textContent = `Level: ${cardData.level}`;
+            level.style.color = `black`;
+            level.style.padding = '20px 0px';
+			level.style.margin = '0';
+            card.appendChild(level);
+
+            const last_project = document.createElement('p');
+            last_project.textContent = `Last submitted project : ${cardData.project_name}`;
+            last_project.style.color = `black`
+            last_project.style.padding = '20px 0px'
+			last_project.style.margin = '0'
+            card.appendChild(last_project);
+
+            const submission = document.createElement('p');
+            submission.textContent = `Submission date : ${cardData.marked_at}`;
+            submission.style.color = `black`
+            submission.style.padding = '20px 0px'
+			submission.style.margin = '0'
+            card.appendChild(submission);
+			
+            return card;
         }
 
         function handleNextClick() {

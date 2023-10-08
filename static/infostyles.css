@@ -1,0 +1,21 @@
+#infoContainer {
+    width: 400px;
+    height: 400px;
+    /* background-color: black; */
+    margin: 0px 20px;
+	padding: 20px 20px;
+	display: flex;
+	align-items: flex-start;
+	flex-direction: row;
+    background-color: #f8f9fa;
+    background-image: url('http://dotrex.co/theme-preview/cards/img/bg-card2.png');
+    box-shadow: 0 0.2rem 0.5rem #ced4da;
+    transition: 1s ease-in-out;
+    clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+body {
+    background-color: rgb(212, 207, 207);
+  }
