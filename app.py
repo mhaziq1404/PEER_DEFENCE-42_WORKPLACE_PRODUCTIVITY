@@ -2,8 +2,12 @@ from flask import Flask, render_template, jsonify, send_file
 import json
 from datetime import datetime
 import requests
-# import pandas as pd
+import pandas as pd
 import os
+from reportlab.lib.pagesizes import letter, landscape
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.lib.units import inch
 
 app = Flask(__name__)
 
@@ -130,6 +134,11 @@ def generate_sheet() -> list:
     dangerous_students = sorted(dangerous_students, key=lambda x: x['blackhole'])
     return dangerous_students
 
+
+def export(bh_students: list):
+    pd.DataFrame(bh_students).to_csv('blackhole.csv', index=False)
+
+
 @app.route('/call_function')
 def my_function():
     try:
@@ -138,13 +147,74 @@ def my_function():
             data = json.load(json_file)
 
         # Write the formatted data to a text file
-        with open("report.txt", 'w') as txt_file:
-            for key, value in data.items():
-                txt_file.write(f"{key} : {value}\n")
+        count_dict = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0}
+        name_dict = {0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: []}
+        for item in data:
+            level = float(item['level'])
+            name = item['fullname']
+            login = item['login']
+            full_str = f"- Cadet with LOGIN : {login} - {name}"
+            if level >= 8.00:
+                level = 8.00
+            level_as_int = int(level)  # Convert to int if needed
+            if level_as_int not in count_dict:
+                count_dict[level_as_int] = 0
+            count_dict[level_as_int] += 1
+            name_dict[level_as_int].append(full_str)
+        
+
+        pdf_file = "final_report.pdf"
+        doc = SimpleDocTemplate(pdf_file, pagesize=letter)
+
+        # Define a list to hold the elements of the PDF (title, text, image, etc.)
+        elements = []
+
+        # Define a custom style for the title
+        title_style = ParagraphStyle(name='TitleStyle', fontSize=18, alignment=0)
+
+        image_path = "42.png"  # Replace with the path to your image
+        img = Image(image_path, width=5 * inch, height=1.1 * inch)
+        elements.append(img)
+        elements.append(Spacer(1, 1 * inch))
+
+        # Create a title
+        title = Paragraph("Cadets BlackHole Days Report", title_style)
+        elements.append(title)
+
+        # Add space after the title
+        elements.append(Spacer(1, 0.8 * inch))
+
+        # Define the body text style
+        body_style = getSampleStyleSheet()['Normal']
+        custom_style = ParagraphStyle(name='CustomStyle', parent=body_style)
+        custom_style.leftIndent = 20  # Adjust the indentation in points (1 inch = 72 points)
+
+        # Add paragraphs of text to the report
+        text = ""
+        for key, val in count_dict.items():
+            text  += f"Cadet(s) on level {key} has {int(val)}(s) that are getting absorbed by the blackhole.\n"
+            paragraphs = Paragraph(text, body_style)
+            elements.append(paragraphs)
+            elements.append(Spacer(1, 0.2 * inch))
+            text = ""
+            if key in name_dict:
+                for value in name_dict[key]:
+                    # Create paragraphs based on name_dict content
+                    text = f"{value}"
+                    paragraph = Paragraph(text, custom_style)
+                    elements.append(paragraph)
+                    text = ""
+            elements.append(Spacer(1, 0.2 * inch))
+
+
+        # Build the PDF document
+        doc.build(elements)
+
         return "True"
     except Exception as e:
         print(f"An error occurred: {str(e)}")
         return "False"
+    
 
 if __name__ == '__main__':
     get_all_users()
