@@ -3,6 +3,8 @@
   <head>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 <body>
     <div class="all">
@@ -19,7 +21,23 @@
     </div>
 
     <div class="console" id="consoleContainer">
+<<<<<<< Updated upstream
 
+=======
+        <div id="infoContainer">
+        </div>
+        	<div id="barChart">
+				<!-- <div id="chartDiv">
+					<canvas class="chartCanvas">
+				</div> -->
+				<!-- <canvas id="myChart" width="600" height="400"></canvas> -->
+			</div>
+		</div>
+		<div id="buttons">
+            <button onclick="callFunction()" class="beautiful-button3">Generate Report</button>
+            <p id="result"></p>
+        </div>
+>>>>>>> Stashed changes
     </div>
 
 
@@ -40,6 +58,21 @@
 			card.style.flexDirection = 'column'
 			card.style.alignItems = 'center';
             card.classList.add('card');
+<<<<<<< Updated upstream
+=======
+            card.addEventListener('mouseover', ()=>{
+				const card2 = createInfoCard(cardData);
+                infoContainer.innerHTML = card2.outerHTML;
+				
+				const barChart = document.getElementById('barChart');
+				const chart = createChart(cardData);
+				const list = document.getElementById('barChart');
+				while (list.hasChildNodes()) {
+					list.removeChild(list.firstChild);
+				}
+				barChart.appendChild(chart);
+			});
+>>>>>>> Stashed changes
 
             const image = document.createElement('img');
             image.src = cardData.image; // Set the image source from the JSON data
@@ -200,6 +233,20 @@
             return card;
         }
 
+<<<<<<< Updated upstream
+=======
+        function callFunction() {
+            // Send an AJAX request to the Flask route that triggers the function
+            fetch('/call_function')
+                .then(response => response.text())
+                .then(data => {
+                    // Display the result on the web page
+                    document.getElementById('result').textContent = data;
+                })
+                .catch(error => console.error('Error:', error));
+            }
+
+>>>>>>> Stashed changes
         // Function to display cards for the current page
         function displayCurrentPage() {
             const startIndex = currentPage * cardsPerPage;
@@ -214,6 +261,135 @@
                 const card = createCard(cardData);
                 cardContainer.appendChild(card);
             }
+<<<<<<< Updated upstream
+=======
+			
+            infoContainer.innerHTML = '';
+            const cardData2 = jsonData[startIndex];
+            const card2 = createInfoCard(cardData2);
+            infoContainer.appendChild(card2);
+			
+			const barChart = document.getElementById('barChart');
+			const chart = createChart(cardData2);
+			barChart.appendChild(chart);
+        }
+
+		function createChart(cardData) {
+				const chartDiv = document.createElement('chartDiv');
+				chartDiv.classList.add('chart-container'); // Add a CSS class for styling
+
+				// Create a canvas element for the chart
+				const chartCanvas = document.createElement('canvas');
+				chartCanvas.classList.add('chartCanvas');
+				chartDiv.appendChild(chartCanvas);
+
+				// Append the chart container to the parent element (barChart in this case)
+				// Assuming you want to append it to the 'barChart' div
+				barChart.appendChild(chartDiv);
+
+				// Extract data from cardData
+				const chartData = cardData.latest_sub;
+
+				// Extract labels (y-axis) and values (x-axis) from chartData	
+				const labels = Object.keys(chartData);
+				const values = Object.values(chartData);
+
+				console.log(labels);
+
+				var ctx = chartCanvas.getContext('2d'); // Use chartCanvas, not 'myChart'
+
+				const chart = new Chart(ctx, {
+					type: 'bar',
+					data: {
+					labels: labels,
+					datasets: [{
+						data: values,
+						backgroundColor: 'rgba(75, 192, 192, 0.6)', // You can customize the bar color
+					}]
+					},
+					options: {
+						plugins: {
+							title: {
+								display: true, // Set to true to display the title
+								text: 'Days between each submission', // Set your desired chart title here
+								fontSize: 16, // You can adjust the font size if needed
+							},
+						},
+						legend: {
+							display: true, // Set to true to display the legend
+							position: 'top', // You can change the legend position ('top', 'bottom', 'left', 'right')
+						},
+						scales: {
+							x: {
+								gridLines: {
+									display: false, // Hide the x-axis grid lines
+								},
+							},
+							y: {
+								beginAtZero: true,
+								gridLines: {
+									display: false, // Hide the y-axis grid lines
+								},
+							},
+						}
+					}
+				});
+			return chartDiv;
+		}
+
+        function createInfoCard(cardData) {
+            const card = document.createElement('div');
+			card.style.padding = '20px';
+			card.style.display = 'flex';
+			card.style.flexDirection = 'column';
+			card.style.alignItems = 'flex-start';
+            
+            const title = document.createElement('h1');
+            title.textContent = `Basic Info`;
+            title.style.textDecorationLine = 'underline';
+            title.style.color = `black`;
+            title.style.padding = '0px 20px 0px 0px';
+			title.style.margin = '0';
+            card.appendChild(title);
+            
+            const name = document.createElement('p');
+            name.textContent = `Full Name: ${cardData.fullname}`;
+            name.style.color = `black`;
+            name.style.paddingTop = '30px';
+            name.style.paddingBottom = '10px';
+			name.style.margin = '0';
+            card.appendChild(name);
+
+            const login = document.createElement('p');
+            login.textContent = `Intra ID: ${cardData.login}`;
+            login.style.color = `black`;
+            login.style.padding = '20px 0px';
+			login.style.margin = '0';
+            card.appendChild(login);
+
+            const level = document.createElement('p');
+            level.textContent = `Level: ${cardData.level}`;
+            level.style.color = `black`;
+            level.style.padding = '20px 0px';
+			level.style.margin = '0';
+            card.appendChild(level);
+
+            const last_project = document.createElement('p');
+            last_project.textContent = `Last submitted project : ${cardData.project_name}`;
+            last_project.style.color = `black`
+            last_project.style.padding = '20px 0px'
+			last_project.style.margin = '0'
+            card.appendChild(last_project);
+
+            const submission = document.createElement('p');
+            submission.textContent = `Submission date : ${cardData.marked_at}`;
+            submission.style.color = `black`
+            submission.style.padding = '20px 0px'
+			submission.style.margin = '0'
+            card.appendChild(submission);
+			
+            return card;
+>>>>>>> Stashed changes
         }
 
         function handleNextClick() {

@@ -127,6 +127,19 @@ def generate_sheet() -> list:
                     dangerous_data['marked_at'] = (cadet['projects_users'][0]['marked_at'])[0:10]
                 else:
                     dangerous_data['marked_at'] = 'in progress'
+                
+                latest_sub = {}
+                if 'projects_users' in cadet:
+                    for x in cadet['projects_users']:
+                        if x['status'] == 'finished':
+                            target_datetime = datetime.strptime(x['marked_at'], "%Y-%m-%dT%H:%M:%S.%fZ")
+                            time_difference = current_datetime - target_datetime
+                            days_until_target = time_difference.days
+                            latest_sub[x['project']['name']] = days_until_target
+                            if (len(latest_sub) == 5):
+                                break ;
+                    dangerous_data['latest_sub'] = latest_sub
+                    print(dangerous_data['latest_sub'])
                 dangerous_students.append(dangerous_data)
         except TypeError:
             pass
